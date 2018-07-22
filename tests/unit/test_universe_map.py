@@ -1,5 +1,5 @@
 import unittest
-from universe_map import *
+from universe_map import Universe, Character
 
 class TestUniverseMap(unittest.TestCase):
 	def test_create_universe(self):
@@ -17,12 +17,10 @@ class TestUniverseMap(unittest.TestCase):
 	def test_create_character_name(self):
 		character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
 		character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
-		character_name_order = [0, 1, 2, 3, 4]
-		character_name = []
-		for num in character_name_order:
-			char_dict = {} 
-			char_dict['name'] = character_names[num]
-			char_dict['type'] = character_name_types[num]
-			char_dict['sequence'] num
-			character_name.append(char_dict)
+		general_character_name_type = 'Formal'
+		character_name = CharacterName(general_character_name_type, character_names, character_name_types)
+		self.assertEqual(character_name['general_type'], 'Formal')
+		self.assertEqual(character_name['full_name_string'], 'James Alexander Malcolm Mackenzie Fraser')
+		
+			
 		
