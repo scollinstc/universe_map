@@ -1,5 +1,5 @@
 import unittest
-from universe_map import Universe, Character
+from universe_map import *
 
 class TestUniverseMap(unittest.TestCase):
 	def test_create_universe(self):
@@ -15,12 +15,39 @@ class TestUniverseMap(unittest.TestCase):
 		self.assertIsNotNone(character)
 		
 	def test_create_character_name(self):
+		general_name_type = 'Formal'
 		character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
 		character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
-		general_character_name_type = 'Formal'
-		character_name = CharacterName(general_character_name_type, character_names, character_name_types)
-		self.assertEqual(character_name['general_type'], 'Formal')
-		self.assertEqual(character_name['full_name_string'], 'James Alexander Malcolm Mackenzie Fraser')
+		character_name = CharacterName(general_name_type, character_names, character_name_types)
+		self.assertEqual(character_name.type, general_name_type)
+		self.assertEqual(character_name.full_name_string, ' '.join(character_names))
+	
+	def test_add_character_to_universe(self):
+		universe = Universe_Map()
+		char = Character()
+		general_name_type = 'Formal'
+		character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+		character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
+		char.add_name(general_name_type, character_names, character_name_types)
+		universe.add_character(char)
+		self.assertEqual(universe.characters[0], char)
 		
-			
-		
+	def test_add_name_to_universe_character(self):
+		universe = Universe_Map()
+		char = Character()
+		general_name_type = 'Formal'
+		character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+		character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
+		char.add_name(general_name_type, character_names, character_name_types)
+		universe.add_character(char)
+		alias_type = 'Alias'
+		alias_names = ['Alexander', 'Malcolm']
+		alias_name_types = ['First', 'Surname']
+		universe.characters[0].add_name(alias_type, alias_names, alias_name_types)
+		self.assertEqual(universe.characters[0].names[1].type, 'Alias')
+		self.assertEqual(universe.characters[0].names[1].full_name_string, 'Alexander Malcolm')
+
+
+if __name__ == '__main__':
+	unittest.main()
+	
