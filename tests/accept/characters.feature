@@ -14,5 +14,16 @@ Feature: Add characters
 			| John       | Doe       |
 			| Jane       | Eyre      |
 
-
-
+	@character
+	Scenario Outline: Additional names are given to a character
+		Given I have created a universe
+		Given I have created a character named James Alexander Malcolm Mackenzie Fraser
+		Given I have added that character to the universe
+		When I call the add_character_name function with character type <type>, names <names>, and name_types <name_types>
+		Then the additional names will appear in the character's list of names
+		
+		Example: Character Names
+		| type          | names                    | name_types                |
+		| Familiar      | ['Jamie', 'Fraser']      | ['First Name', 'Surname'] |
+		| Alias         | ['Jamie', 'Roy']         | ['First Name', 'Surname'] |
+		| Alias         | ['Alexander', 'Malcolm'] | ['First Name', 'Surname'] |         
