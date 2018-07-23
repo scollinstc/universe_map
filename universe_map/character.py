@@ -1,9 +1,15 @@
 class CharacterName:
     def __init__(self, general_name_type, names, name_types):
         # First, assert that names and types are the same length
+        print('Name type: ' + general_name_type)
+        print('Names Length: ' + str(len(names)))
+        print('NameTypes Length: ' + str(len(name_types)))
         assert len(names) == len(name_types), "Names and types lists need to be the same length."
         self._name_type = general_name_type
         self._name = create_name_list(names, name_types)
+        print('Full Name: ' + self.full_name_string)
+        print()
+        print()
 
     @property
     def name_type(self):
@@ -49,3 +55,25 @@ class Character:
 
     def add_name(self, general_name_type, names, name_types):
         self._names.append(CharacterName(general_name_type, names, name_types))
+
+    def add_name_from_string(self, general_name_type, name_string):
+        # Need to convert to type, name list, name_type list to create character name.
+        name_list = name_string.split(' ')
+        assert len(name_list) > 0, 'Invalid name.'
+        name_types = get_default_name_type_list(name_list)
+        self._names.append(CharacterName(general_name_type, name_list, name_types))
+
+
+def get_default_name_type_list(name_list):
+    if len(name_list) == 1:
+        return ['Mononymous']
+    name_types = [None for _ in name_list]
+    name_types[0] = 'First'
+    name_types[-1] = 'Surname'
+    for num in range(1, (len(name_types) - 1)):
+        name_types[num] = 'Middle'
+    return name_types
+
+
+
+

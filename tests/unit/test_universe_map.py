@@ -48,6 +48,35 @@ class TestUniverseMap(unittest.TestCase):
         universe.characters[0].add_name(alias_type, alias_names, alias_name_types)
         self.assertEqual(universe.characters[0].names[1].name_type, 'Alias')
         self.assertEqual(universe.characters[0].names[1].full_name_string, 'Alexander Malcolm')
+        self.assertEqual(len(universe.characters), 1)
+        self.assertEqual(len(universe.characters[0].names), 2)
+
+    def test_add_string_name_character(self):
+        char = Character()
+        general_name_type = 'Formal'
+        character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+        character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
+        char.add_name(general_name_type, character_names, character_name_types)
+        alias_type = 'Alias'
+        alias_string_name = 'Alexander Malcolm'
+        char.add_name_from_string(alias_type, alias_string_name)
+        self.assertEqual(char.names[1].full_name_string, 'Alexander Malcolm')
+        self.assertEqual(char.names[1].name_type, 'Alias')
+        self.assertEqual(char.names[1].name[0]['name'], 'Alexander')
+        self.assertEqual(char.names[1].name[1]['name'], 'Malcolm')
+        self.assertEqual(char.names[1].name[0]['type'], 'First')
+        self.assertEqual(char.names[1].name[1]['type'], 'Surname')
+        second_alias_type = 'Alias'
+        second_alias_string_name = 'Jamie Mackenzie MacTavish'
+        char.add_name_from_string(second_alias_type, second_alias_string_name)
+        self.assertEqual(char.names[2].full_name_string, 'Jamie Mackenzie MacTavish')
+        self.assertEqual(char.names[2].name_type, 'Alias')
+        self.assertEqual(char.names[2].name[0]['name'], 'Jamie')
+        self.assertEqual(char.names[2].name[1]['name'], 'Mackenzie')
+        self.assertEqual(char.names[2].name[2]['name'], 'MacTavish')
+        self.assertEqual(char.names[2].name[0]['type'], 'First')
+        self.assertEqual(char.names[2].name[1]['type'], 'Middle')
+        self.assertEqual(char.names[2].name[2]['type'], 'Surname')
 
 
 if __name__ == '__main__':
