@@ -1,15 +1,15 @@
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 class CharacterName:
     def __init__(self, general_name_type, names, name_types):
         # First, assert that names and types are the same length
-        print('Name type: ' + general_name_type)
-        print('Names Length: ' + str(len(names)))
-        print('NameTypes Length: ' + str(len(name_types)))
-        assert len(names) == len(name_types), "Names and types lists need to be the same length."
+        assert len(names) == len(name_types), logger.info("Names and types lists need to be the same length.")
         self._name_type = general_name_type
         self._name = create_name_list(names, name_types)
-        print('Full Name: ' + self.full_name_string)
-        print()
-        print()
+        logger.info(str.format(' New %s name added: %s' % (self.name_type, self.full_name_string)))
 
     @property
     def name_type(self):
@@ -66,7 +66,7 @@ class Character:
 
 def get_default_name_type_list(name_list):
     if len(name_list) == 1:
-        return ['Mononymous']
+        return ['Mononym']
     name_types = [None for _ in name_list]
     name_types[0] = 'First'
     name_types[-1] = 'Surname'
