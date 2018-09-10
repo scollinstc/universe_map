@@ -15,3 +15,16 @@ Feature: Add characters
 		| Alias         | 'Jamie Mackenzie MacTavish' |
 		| Alias         | 'Alexander Malcolm'         |
 
+	@relationship
+	Scenario Outline: Basic relationship defined for two characters in a universe
+		Given I have created a universe
+		Given I have created six characters
+		Given I have created three relationship types
+        When I call the relate_characters function on <character_L> and <character_R> characters with relationship direction <direction> and relationship type <type>
+        Then the relationship will be listed under the universe's list of relationships
+
+        Examples: Relating characters
+        | character_L      | character_R      | direction | type       |
+        | Jenny Fraser     | Ian Murray       | both      | married_to |
+        | Colum Mackenzie  | Dougal Mackenzie | both      | sibling_of |
+        | Brianna Randall  | Ellen Mackenzie  | one       | knows_of   |
