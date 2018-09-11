@@ -33,3 +33,4 @@ class RelationshipType:
             raise ValueError("Invalid RelationshipType default_direction value. Must be a string.")
         self._default_direction = value
 
+

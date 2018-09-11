@@ -78,7 +78,7 @@ def create_three_relationship_types(context):
     for i in range(len(relationship_types)):
         rt = RelationshipType()
         rt.name = relationship_types[i]
-        rt.set_default_relationship_type_direction(relationship_default_directions[i])
+        rt.default_direction = relationship_default_directions[i]
         context.universe.add_relationship_type(rt)
 
 @when(

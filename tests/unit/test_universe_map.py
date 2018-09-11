@@ -112,6 +112,19 @@ class TestUniverseMap(unittest.TestCase):
         with self.assertRaises(ValueError):
             relationship_type.default_direction = invalid_default
 
+    def test_add_relationship_type_to_universe(self):
+        universe = Universe()
+        universe.name = 'Outlander'
+        relationship_type = RelationshipType()
+        type_name = "married_to"
+        default_direction = "both"
+        relationship_type.name = type_name
+        relationship_type.default_direction = default_direction
+        universe.add_relationship_type(relationship_type)
+        self.assertIn(relationship_type, universe.relationship_types)
+
+
+
 
 
 
