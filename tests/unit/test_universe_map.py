@@ -2,6 +2,7 @@ import unittest
 from universe_map.universe import Universe
 from universe_map.character import Character, CharacterName
 from universe_map.relationship import RelationshipType
+from universe_map.error import NotExistsError
 
 
 class TestUniverseMap(unittest.TestCase):
@@ -123,11 +124,29 @@ class TestUniverseMap(unittest.TestCase):
         universe.add_relationship_type(relationship_type)
         self.assertIn(relationship_type, universe.relationship_types)
 
-
-
-
-
-
+    def test_find_character_by_name(self):
+        universe = Universe()
+        char = Character()
+        general_name_type = 'Formal'
+        character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+        character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
+        char.add_name(general_name_type, character_names, character_name_types)
+        universe.add_character(char)
+        alias_type = 'Alias'
+        alias_names = ['Alexander', 'Malcolm']
+        alias_name_types = ['First', 'Surname']
+        universe.characters[0].add_name(alias_type, alias_names, alias_name_types)
+        char.add_name(alias_type, alias_names, alias_name_types)
+        character_name = universe.characters[0].names[0].full_name_string
+        character_alias = universe.characters[0].names[1].full_name_string
+        found_character = universe.get_character_by_name(character_name)
+        found_character_alias = universe.get_character_by_name(character_alias)
+        self.assertEqual(char, found_character)
+        self.assertEqual(char, found_character_alias)
+        self.assertEqual(found_character, found_character_alias)
+        erroneous_name = "Alex Malcolm"
+        with self.assertRaises(NotExistsError):
+            error_character = universe.get_character_by_name(erroneous_name)
 
 
 if __name__ == '__main__':
