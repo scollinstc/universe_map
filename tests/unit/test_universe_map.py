@@ -88,6 +88,14 @@ class TestUniverseMap(unittest.TestCase):
         self.assertEqual(char.names[3].name[0]['name'], 'MacDubh')
         self.assertEqual(char.names[3].name[0]['type'], 'Mononym')
 
+    def test_character_name_strings_property(self):
+        char = Character()
+        name_types = ['Formal', 'Alias']
+        names = ['James Alexander Malcolm Mackenzie Fraser', 'Alexander Malcolm']
+        for i in range(len(names)):
+            char.add_name_from_string(name_types[i], names[i])
+        self.assertListEqual(char.name_strings, names)
+
     def test_create_relationship_type(self):
         relationship_type = RelationshipType()
         self.assertIsNotNone(relationship_type)
@@ -146,7 +154,7 @@ class TestUniverseMap(unittest.TestCase):
         self.assertEqual(found_character, found_character_alias)
         erroneous_name = "Alex Malcolm"
         with self.assertRaises(NotExistsError):
-            error_character = universe.get_character_by_name(erroneous_name)
+            universe.get_character_by_name(erroneous_name)
 
 
 if __name__ == '__main__':

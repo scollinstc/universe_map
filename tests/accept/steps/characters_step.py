@@ -82,8 +82,8 @@ def create_three_relationship_types(context):
         context.universe.add_relationship_type(rt)
 
 @when(
-    "I call the relate_characters function on (?P<character_L>.+) and (?P<character_R>.+) characters with relationship direction (?P<direction>.+) and relationship type (?P<type>.+)")
-def step_impl(context, character_L, character_R, direction, type):
+    "I call the establish_relationship function on (?P<character_L>.+) and (?P<character_R>.+) characters with relationship direction (?P<direction>.+) and relationship type (?P<type>.+)")
+def establish_relationship_function(context, character_L, character_R, direction, type):
     """
     :type context: behave.runner.Context
     :type character_L: str
@@ -91,7 +91,9 @@ def step_impl(context, character_L, character_R, direction, type):
     :type direction: str
     :type type: str
     """
-    pass
+    context.universe.establish_relationship(character_L, character_R, direction, type)
+
+
 
 
 @then("the relationship will be listed under the universe's list of relationships")

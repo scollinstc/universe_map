@@ -63,6 +63,10 @@ class Character:
         name_types = get_default_name_type_list(name_list)
         self._names.append(CharacterName(general_name_type, name_list, name_types))
 
+    @property
+    def name_strings(self):
+        return [name.full_name_string for name in self.names]
+
 
 def get_default_name_type_list(name_list):
     if len(name_list) == 1:

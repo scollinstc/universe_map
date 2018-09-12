@@ -1,5 +1,6 @@
 from universe_map.relationship import RelationshipType
 from universe_map.character import Character
+from universe_map.error import NotExistsError
 
 class Universe:
     def __init__(self):
@@ -47,4 +48,16 @@ class Universe:
         if not isinstance(relationship_type_object, RelationshipType):
             raise ValueError("Input must be a RelationshipType object.")
         self._relationship_types.append(relationship_type_object)
+
+    def get_character_by_name(self, search_name):
+        """
+
+        :param character_name:
+        :return:
+        """
+        for character in self._characters:
+            if search_name in character.name_strings:
+                return character
+        raise NotExistsError(self.characters, "Searched name does not appear in character list.")
+
 
