@@ -1,7 +1,7 @@
 import unittest
 from universe_map.universe import Universe
 from universe_map.character import Character, CharacterName
-from universe_map.relationship import RelationshipType
+from universe_map.relationship import Relationship, RelationshipType
 from universe_map.error import NotExistsError
 
 
@@ -155,6 +155,57 @@ class TestUniverseMap(unittest.TestCase):
         erroneous_name = "Alex Malcolm"
         with self.assertRaises(NotExistsError):
             universe.get_character_by_name(erroneous_name)
+
+    def test_establish_relationship(self):
+        universe = Universe()
+        universe.name = 'Outlander'
+        jamie = Character()
+        j_name_types = ['Formal', 'Alias']
+        j_names = ['James Alexander Malcolm Mackenzie Fraser', 'Alexander Malcolm']
+        for i in range(len(j_names)):
+            jamie.add_name_from_string(j_name_types[i], j_names[i])
+        claire = Character()
+        c_name_types = ['Maiden', 'Nickname']
+        c_names = ['Claire Elizabeth Beauchamp', 'Sassenach']
+        for i in range(len(c_names)):
+            claire.add_name_from_string(c_name_types[i], c_names[i])
+        universe.add_character(jamie)
+        universe.add_character(claire)
+        relationship_type_name = 'married_to'
+        relationship_type_direction = 'both'
+        rel_type = RelationshipType()
+        rel_type.name = relationship_type_name
+        rel_type.default_direction = relationship_type_direction
+        universe.add_relationship_type(rel_type)
+        universe.establish_relationship(jamie, claire, relationship_type_name)
+        test_relationship = Relationship()
+        test_relationship.left = jamie
+        test_relationship.right = claire
+        test_relationship.type = rel_type
+        self.assertEqual(universe.relationships[0], test_relationship)
+
+    def test_add_relationship(self):
+        jamie = Character()
+        j_name_types = ['Formal', 'Alias']
+        j_names = ['James Alexander Malcolm Mackenzie Fraser', 'Alexander Malcolm']
+        for i in range(len(j_names)):
+            jamie.add_name_from_string(j_name_types[i], j_names[i])
+        claire = Character()
+        c_name_types = ['Maiden', 'Nickname']
+        c_names = ['Claire Elizabeth Beauchamp', 'Sassenach']
+        for i in range(len(c_names)):
+            claire.add_name_from_string(c_name_types[i], c_names[i])
+        relationship_type_name = 'married_to'
+        relationship_type_direction = 'both'
+        rel_type = RelationshipType()
+        rel_type.name = relationship_type_name
+        rel_type.default_direction = relationship_type_direction
+        # NOTE: Start here!!!! Need to figure out how to gracefully add the 'both' direction.
+
+
+
+
+
 
 
 if __name__ == '__main__':

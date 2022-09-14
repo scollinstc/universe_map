@@ -60,4 +60,24 @@ class Universe:
                 return character
         raise NotExistsError(self.characters, "Searched name does not appear in character list.")
 
+    def establish_relationship(self, left_entity, right_entity, direction, relationship_type_name):
+        """
+
+        :param left_entity:
+        :param right_entity:
+        :param relationship_type_name:
+        :return:
+        """
+        # First, establish that the correct relationship type exists.
+        # Then, make the Relationship object
+        # Then, make a unique dictionary name, and add the relationship to a dictionary of relationships
+        current_relationship_type = None
+        for rel_type in self._relationship_types:
+            if rel_type.name == relationship_type_name:
+                current_relationship_type = rel_type
+        if current_relationship_type is not None:
+            raise NotExistsError(self.relationship_types, "Specified relationship type does not appear in relationship types.")
+        self.add_relationship(left_entity, right_entity, current_relationship_type)
+
+
 
