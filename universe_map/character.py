@@ -4,6 +4,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class CharacterName:
+
     def __init__(self, general_name_type, names, name_types):
         # First, assert that names and types are the same length
         assert len(names) == len(name_types), logger.info("Names and types lists need to be the same length.")
