@@ -4,7 +4,21 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class CharacterName:
+    """
+    Character Name object associated with a Character.
 
+    Attributes
+    ----------
+     name_type : String
+        Specifies what type of name is associated with this name for a character.
+        Includes types like 'Familiar', 'Alias', 'Formal', 'Legal', etc.
+
+    name : String
+        Name value for the character
+
+    full_name_string : String
+        Joins name values together into one string.
+    """
     def __init__(self, general_name_type, names, name_types):
         # First, assert that names and types are the same length
         assert len(names) == len(name_types), logger.info("Names and types lists need to be the same length.")
@@ -34,6 +48,12 @@ class CharacterName:
 
 
 def create_name_list(names, name_types):
+    """
+
+    :param names: List of names
+    :param name_types: List of name types
+    :return: A list of names and their types as a dictionary
+    """
     # List being used to preserve indexing order
     name_list = []
     for i in range(len(names)):
@@ -74,7 +94,3 @@ def get_default_name_type_list(name_list):
     for num in range(1, (len(name_types) - 1)):
         name_types[num] = 'Middle'
     return name_types
-
-
-
-

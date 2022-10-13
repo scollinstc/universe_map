@@ -14,7 +14,7 @@ class Universe:
 
     Methods
     -------
-    add_character(character_object=None)
+    add_character(character_object=None):
         Adds a character object to the universe's list of characters.
     """
     def __init__(self, name=None, characters=None):
@@ -66,6 +66,11 @@ class Universe:
         ------
         ValueError
             If the input character_object is not of type universe_map.Character.
+
+        Examples
+        --------
+        >>> story_world = Universe()
+        >>> story_world.add_character(Bob)
         """
         if isinstance(character_object, Character):
             self._characters.append(character_object)
