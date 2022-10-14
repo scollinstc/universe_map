@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 class CharacterName:
     """
-    Character Name object associated with a Character.
+    Character name object associated with a Character.
 
     Attributes
     ----------
@@ -21,7 +21,7 @@ class CharacterName:
     """
     def __init__(self, general_name_type, names, name_types):
         # First, assert that names and types are the same length
-        assert len(names) == len(name_types), logger.info("Names and types lists need to be the same length.")
+        assert len(names) == len(name_types), _logger.info("Names and types lists need to be the same length.")
         self._name_type = general_name_type
         self._name = create_name_list(names, name_types)
         logger.info(str.format(' New %s name added: %s' % (self.name_type, self.full_name_string)))
@@ -49,10 +49,19 @@ class CharacterName:
 
 def create_name_list(names, name_types):
     """
+    Creates a list of names in dictionary format to use with Character objects.
 
-    :param names: List of names
-    :param name_types: List of name types
-    :return: A list of names and their types as a dictionary
+    Parameters
+    ----------
+    names : list
+        List of names
+    name_types : list
+        List of name types, with indices corresponding to the names given in the names parameter.
+
+    returns
+    -------
+    list
+        A list of dictionaries including the names and their types
     """
     # List being used to preserve indexing order
     name_list = []

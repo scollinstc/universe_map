@@ -66,11 +66,6 @@ class Universe:
         ------
         ValueError
             If the input character_object is not of type universe_map.Character.
-
-        Examples
-        --------
-        >>> story_world = Universe()
-        >>> story_world.add_character(Bob)
         """
         if isinstance(character_object, Character):
             self._characters.append(character_object)
