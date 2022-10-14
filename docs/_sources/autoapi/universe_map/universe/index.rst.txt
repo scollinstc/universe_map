@@ -1,0 +1,93 @@
+:py:mod:`universe_map.universe`
+===============================
+
+.. py:module:: universe_map.universe
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   universe_map.universe.Universe
+
+
+
+
+.. py:class:: Universe(name=None, characters=None)
+
+   
+   A class used to represent a story or setting's 'universe'.
+
+   .. attribute:: name
+
+      A string that gives the name of the universe instance.
+
+      :type: str
+
+   .. attribute:: characters
+
+      A list of universe_map.Character objects comprising the characters present in this universe.
+
+      :type: list
+
+   .. method:: add_character(character_object=None):
+
+      Adds a character object to the universe's list of characters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:property:: name
+
+
+   .. py:property:: characters
+
+
+   .. py:method:: name()
+
+
+   .. py:method:: add_character(character_object)
+
+      
+      Adds a character to the list of characters.
+
+      character_object: Character
+          universe_map.Character object to go in this universe instance's Character list.
+
+      :raises ValueError: If the input character_object is not of type universe_map.Character.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

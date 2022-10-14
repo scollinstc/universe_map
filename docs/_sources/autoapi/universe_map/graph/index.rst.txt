@@ -1,0 +1,15 @@
+:py:mod:`universe_map.graph`
+============================
+
+.. py:module:: universe_map.graph
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   universe/index.rst
+
+

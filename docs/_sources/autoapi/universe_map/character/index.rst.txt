@@ -1,0 +1,131 @@
+:py:mod:`universe_map.character`
+================================
+
+.. py:module:: universe_map.character
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   universe_map.character.CharacterName
+   universe_map.character.Character
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   universe_map.character.create_name_list
+   universe_map.character.get_default_name_type_list
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   universe_map.character.logger
+
+
+.. py:data:: logger
+   
+
+   
+
+.. py:class:: CharacterName(general_name_type, names, name_types)
+
+   
+   Character name object associated with a Character.
+
+   .. attribute:: name_type
+
+      Specifies what type of name is associated with this name for a character.
+      Includes types like 'Familiar', 'Alias', 'Formal', 'Legal', etc.
+
+      :type: String
+
+   name : String
+       Name value for the character
+
+   full_name_string : String
+       Joins name values together into one string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:property:: name_type
+
+
+   .. py:property:: name
+
+
+   .. py:property:: full_name_string
+
+
+
+.. py:function:: create_name_list(names, name_types)
+
+   
+   Creates a list of names in dictionary format to use with Character objects.
+
+   :param names: List of names
+   :type names: list
+   :param name_types: List of name types, with indices corresponding to the names given in the names parameter.
+   :type name_types: list
+
+   :returns: A list of dictionaries including the names and their types
+   :rtype: list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:class:: Character
+
+   .. py:property:: names
+
+
+   .. py:method:: add_name(general_name_type, names, name_types)
+
+
+   .. py:method:: add_name_from_string(general_name_type, name_string)
+
+
+
+.. py:function:: get_default_name_type_list(name_list)
+
+

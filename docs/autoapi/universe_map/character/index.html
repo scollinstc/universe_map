@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>universe_map.character &#8212; Universe Map 0.0.1-rc-1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/nature.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Universe Map 0.0.1-rc-1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">universe_map.character</span></code></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-universe_map.character">
+<span id="universe-map-character"></span><h1><a class="reference internal" href="#module-universe_map.character" title="universe_map.character"><code class="xref py py-mod docutils literal notranslate"><span class="pre">universe_map.character</span></code></a><a class="headerlink" href="#module-universe_map.character" title="Permalink to this heading">¶</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#universe_map.character.CharacterName" title="universe_map.character.CharacterName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CharacterName</span></code></a></p></td>
+<td><p>Character name object associated with a Character.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#universe_map.character.Character" title="universe_map.character.Character"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Character</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#universe_map.character.create_name_list" title="universe_map.character.create_name_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_name_list</span></code></a>(names, name_types)</p></td>
+<td><p>Creates a list of names in dictionary format to use with Character objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#universe_map.character.get_default_name_type_list" title="universe_map.character.get_default_name_type_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_name_type_list</span></code></a>(name_list)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#universe_map.character.logger" title="universe_map.character.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="universe_map.character.logger">
+<span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">logger</span></span><a class="headerlink" href="#universe_map.character.logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="universe_map.character.CharacterName">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">CharacterName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">general_name_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.CharacterName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Character name object associated with a Character.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="universe_map.character.CharacterName.name_type">
+<span class="sig-name descname"><span class="pre">name_type</span></span><a class="headerlink" href="#universe_map.character.CharacterName.name_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies what type of name is associated with this name for a character.
+Includes types like ‘Familiar’, ‘Alias’, ‘Formal’, ‘Legal’, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="simple">
+<dt>name<span class="classifier">String</span></dt><dd><p>Name value for the character</p>
+</dd>
+<dt>full_name_string<span class="classifier">String</span></dt><dd><p>Joins name values together into one string.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name_type</span></span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="universe_map.character.CharacterName.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#universe_map.character.CharacterName.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="universe_map.character.CharacterName.full_name_string">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">full_name_string</span></span><a class="headerlink" href="#universe_map.character.CharacterName.full_name_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="universe_map.character.create_name_list">
+<span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">create_name_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.create_name_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a list of names in dictionary format to use with Character objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>names</strong> (<em>list</em>) – List of names</p></li>
+<li><p><strong>name_types</strong> (<em>list</em>) – List of name types, with indices corresponding to the names given in the names parameter.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of dictionaries including the names and their types</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="universe_map.character.Character">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">Character</span></span><a class="headerlink" href="#universe_map.character.Character" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="universe_map.character.Character.names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#universe_map.character.Character.names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="universe_map.character.Character.add_name">
+<span class="sig-name descname"><span class="pre">add_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">general_name_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.Character.add_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="universe_map.character.Character.add_name_from_string">
+<span class="sig-name descname"><span class="pre">add_name_from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">general_name_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.Character.add_name_from_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="universe_map.character.get_default_name_type_list">
+<span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">get_default_name_type_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.get_default_name_type_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">universe_map.character</span></code></a><ul>
+<li><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#attributes">Attributes</a><ul>
+<li><a class="reference internal" href="#universe_map.character.logger">logger</a></li>
+<li><a class="reference internal" href="#universe_map.character.CharacterName">CharacterName</a><ul>
+<li><a class="reference internal" href="#universe_map.character.CharacterName.name_type">name_type</a></li>
+<li><a class="reference internal" href="#id0">name_type</a></li>
+<li><a class="reference internal" href="#universe_map.character.CharacterName.name">name</a></li>
+<li><a class="reference internal" href="#universe_map.character.CharacterName.full_name_string">full_name_string</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#universe_map.character.create_name_list">create_name_list</a></li>
+<li><a class="reference internal" href="#universe_map.character.Character">Character</a><ul>
+<li><a class="reference internal" href="#universe_map.character.Character.names">names</a></li>
+<li><a class="reference internal" href="#universe_map.character.Character.add_name">add_name</a></li>
+<li><a class="reference internal" href="#universe_map.character.Character.add_name_from_string">add_name_from_string</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#universe_map.character.get_default_name_type_list">get_default_name_type_list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/autoapi/universe_map/character/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Universe Map 0.0.1-rc-1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">universe_map.character</span></code></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Sara Collins.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+    </div>
+  </body>
+</html>

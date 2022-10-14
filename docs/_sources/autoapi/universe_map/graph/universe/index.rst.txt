@@ -1,0 +1,14 @@
+:py:mod:`universe_map.graph.universe`
+=====================================
+
+.. py:module:: universe_map.graph.universe
+
+
+Module Contents
+---------------
+
+.. py:data:: graph
+   
+
+   
+
