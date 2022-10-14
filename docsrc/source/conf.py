@@ -2,9 +2,6 @@
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
-import pathlib
-import sys
-sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -17,7 +14,8 @@ release = '0.0.1-rc-1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.duration',
+extensions = ['sphinx.ext.githubpages',
+              'sphinx.ext.duration',
               'sphinx.ext.doctest',
               'sphinx.ext.napoleon',
               'numpydoc',
