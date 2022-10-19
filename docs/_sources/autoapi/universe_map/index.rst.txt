@@ -4,15 +4,6 @@
 .. py:module:: universe_map
 
 
-Subpackages
------------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 3
-
-   graph/index.rst
-
-
 Submodules
 ----------
 .. toctree::
