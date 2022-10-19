@@ -37,6 +37,9 @@ class Universe:
 
     @property
     def name(self):
+        """
+        Name associated with the universe object.
+        """
         return self._name
 
     @name.setter

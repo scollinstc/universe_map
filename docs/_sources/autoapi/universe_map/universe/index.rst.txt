@@ -56,6 +56,26 @@ Classes
        !! processed by numpydoc !!
    .. py:property:: name
 
+      
+      Name associated with the universe object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:property:: characters
 
