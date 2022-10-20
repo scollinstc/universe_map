@@ -1,10 +1,16 @@
+"""
+Universe module for universe_map.
+
+A universe is the world that a story or some other kind of setting takes place in. The universe includes the
+collection of characters, names they are known by, their relationships, the places in the universe,
+events, and other critical components to the story.
+
+"""
 from universe_map.character import Character
 
 class Universe:
     """
-    A class used to represent a story's world, or 'universe'. This includes the collection of characters,
-    names they are known by, their relationships, the places in the universe, events, and other critical
-    components to the story.
+    A class used to represent a story's world, or 'universe'.
 
     """
     def __init__(self, name=None, characters=None):
@@ -46,6 +52,8 @@ class Universe:
         """
         Adds a character to the Universe object's list of characters.
 
+        Parameters
+        ----------
         character_object : Character
             universe_map.Character object to go in this universe instance's Character list.
 

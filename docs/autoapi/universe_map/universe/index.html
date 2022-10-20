@@ -39,6 +39,10 @@
             
   <section id="module-universe_map.universe">
 <span id="universe-map-universe"></span><h1><a class="reference internal" href="#module-universe_map.universe" title="universe_map.universe"><code class="xref py py-mod docutils literal notranslate"><span class="pre">universe_map.universe</span></code></a><a class="headerlink" href="#module-universe_map.universe" title="Permalink to this heading">¶</a></h1>
+<p>Universe module for universe_map.</p>
+<p>A universe is the world that a story or some other kind of setting takes place in. The universe includes the
+collection of characters, names they are known by, their relationships, the places in the universe,
+events, and other critical components to the story.</p>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
 <section id="classes">
@@ -46,16 +50,14 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#universe_map.universe.Universe" title="universe_map.universe.Universe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Universe</span></code></a></p></td>
-<td><p>A class used to represent a story's world, or 'universe'. This includes the collection of characters,</p></td>
+<td><p>A class used to represent a story's world, or 'universe'.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="universe_map.universe.Universe">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">universe_map.universe.</span></span><span class="sig-name descname"><span class="pre">Universe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.universe.Universe" title="Permalink to this definition">¶</a></dt>
-<dd><p>A class used to represent a story’s world, or ‘universe’. This includes the collection of characters,
-names they are known by, their relationships, the places in the universe, events, and other critical
-components to the story.</p>
+<dd><p>A class used to represent a story’s world, or ‘universe’.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="universe_map.universe.Universe.name">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#universe_map.universe.Universe.name" title="Permalink to this definition">¶</a></dt>
@@ -70,13 +72,12 @@ components to the story.</p>
 <dt class="sig sig-object py" id="universe_map.universe.Universe.add_character">
 <span class="sig-name descname"><span class="pre">add_character</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">character_object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.universe.Universe.add_character" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a character to the Universe object’s list of characters.</p>
-<dl class="simple">
-<dt>character_object: Character</dt><dd><p>universe_map.Character object to go in this universe instance’s Character list.</p>
-</dd>
-</dl>
 <dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If the input character_object is not of type universe_map.Character.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_object</strong> (<a class="reference internal" href="../character/index.html#universe_map.character.Character" title="universe_map.character.Character"><em>Character</em></a>) – universe_map.Character object to go in this universe instance’s Character list.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the input character_object is not of type universe_map.Character.</p>
 </dd>
 </dl>
 </dd></dl>
