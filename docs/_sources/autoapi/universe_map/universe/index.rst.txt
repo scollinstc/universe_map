@@ -23,21 +23,6 @@ Classes
    A class used to represent a story's world, or 'universe'. This includes the collection of characters, names they
    are known by, their relationships, the places in the universe, events, and other critical components to the story.
 
-   .. attribute:: name
-
-      A string that gives the name of the universe instance.
-
-      :type: str
-
-   .. attribute:: characters
-
-      A list of universe_map.Character objects comprising the characters present in this universe.
-
-      :type: list
-
-   .. method:: add_character(character_object=None):
-
-      Adds a character object to the universe's list of characters.
 
 
 
@@ -61,13 +46,10 @@ Classes
    .. py:property:: characters
 
 
-   .. py:method:: name()
-
-
    .. py:method:: add_character(character_object)
 
       
-      Adds a character to the list of characters.
+      Adds a character to the Universe object's list of characters.
 
       character_object: Character
           universe_map.Character object to go in this universe instance's Character list.
