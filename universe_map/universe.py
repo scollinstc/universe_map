@@ -2,7 +2,8 @@ from universe_map.character import Character
 
 class Universe:
     """
-    A class used to represent a story or setting's 'universe'.
+    A class used to represent a story's world, or 'universe'. This includes the collection of characters, names they
+    are known by, their relationships, the places in the universe, events, and other critical components to the story.
 
 
     Attributes
@@ -37,9 +38,6 @@ class Universe:
 
     @property
     def name(self):
-        """
-        Name associated with the universe object.
-        """
         return self._name
 
     @name.setter
