@@ -2,16 +2,20 @@ from universe_map.character import Character
 
 class Universe:
     """
-    A class used to represent a story's world, or 'universe'. This includes the collection of characters, names they are known by, their relationships, the places in the universe, events, and other critical components to the story.
+    A class used to represent a story's world, or 'universe'. This includes the collection of characters,
+    names they are known by, their relationships, the places in the universe, events, and other critical
+    components to the story.
+
     """
     def __init__(self, name=None, characters=None):
         """
-        Parameters
+        Attributes
         ----------
         name : str
             A string that gives the name of the universe instance.
-        characters: list
+        characters : list
             A list of universe_map.Character objects comprising the characters present in this universe.
+
         """
         self._name = None
         self._characters = []
@@ -42,7 +46,7 @@ class Universe:
         """
         Adds a character to the Universe object's list of characters.
 
-        character_object: Character
+        character_object : Character
             universe_map.Character object to go in this universe instance's Character list.
 
         Raises
