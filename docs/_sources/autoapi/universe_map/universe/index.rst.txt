@@ -33,6 +33,10 @@ Classes
    
    An object used to represent a story's world, or 'universe'.
 
+   :param name: A string that gives the name of the universe instance.
+   :type name: str
+   :param characters: A list of universe_map.Character objects comprising the characters present in this universe.
+   :type characters: list
 
 
 

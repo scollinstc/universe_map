@@ -11,6 +11,13 @@ class Universe:
     """
     An object used to represent a story's world, or 'universe'.
 
+    Parameters
+    ----------
+    name : str
+        A string that gives the name of the universe instance.
+    characters : list
+        A list of universe_map.Character objects comprising the characters present in this universe.
+
     """
     def __init__(self, name=None, characters=None):
 
