@@ -31,7 +31,7 @@ Classes
 .. py:class:: Universe(name=None, characters=None)
 
    
-   A class used to represent a story's world, or 'universe'.
+   An object used to represent a story's world, or 'universe'.
 
 
 

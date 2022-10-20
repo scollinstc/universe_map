@@ -9,20 +9,11 @@ from universe_map.character import Character
 
 class Universe:
     """
-    A class used to represent a story's world, or 'universe'.
+    An object used to represent a story's world, or 'universe'.
 
     """
     def __init__(self, name=None, characters=None):
-        """
-        Instantiates a Universe object.
 
-        Parameters
-        ----------
-        name : str
-            A string that gives the name of the universe instance.
-        characters : list
-            A list of universe_map.Character objects comprising the characters present in this universe.
-        """
         self._name = None
         self._characters = []
 
