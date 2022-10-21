@@ -143,6 +143,13 @@ Functions
 
       :type: String
 
+   .. rubric:: Examples
+
+   >>> name_type = 'Formal'
+   >>> character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+   >>> character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
+   >>> my_character_name = CharacterName(name_type, character_names, character_name_types)
+
 
 
 

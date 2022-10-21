@@ -110,6 +110,15 @@ class CharacterName:
 
         full_name_string : String
             Joins name values together into one string.
+
+        Examples
+        --------
+        >>> name_type = 'Formal'
+        >>> character_names = ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+        >>> character_name_types = ['First', 'Middle', 'Middle', 'Middle', 'Surname']
+        >>> my_character_name = CharacterName(name_type, character_names, character_name_types)
+        >>> my_character_name.name_type
+        'Formal'
         """
         assert len(names) == len(name_types), logger.info("Names and types lists need to be the same length.")
         self._name_type = general_name_type
@@ -173,6 +182,11 @@ def get_default_name_type_list(name_list):
     -------
     name_types : list
         List of name types associated with the name_list names.
+
+    Examples
+    --------
+    >>> name = "James Alexander Malcolm Mackenzie Fraser"
+    >>> name_list = name.split()
     """
     if len(name_list) == 1:
         return ['Mononym']
