@@ -56,9 +56,26 @@ Classes
        !! processed by numpydoc !!
    .. py:property:: name
 
+      
+      noindex:
 
-   .. py:property:: characters
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
 
    .. py:method:: add_character(character_object)
 

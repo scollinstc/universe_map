@@ -27,6 +27,8 @@ autosummary_generate = True
 autosummary_imported_members = True
 numpydoc_show_class_members = True
 autoapi_dirs = ['../../universe_map']
+autoapi_options = ['members', 'inherited-members', 'private-members', 'show-inheritance', 'show-inheritance-diagram',
+                   'show-module-summary']
 
 
 # -- Options for HTML output -------------------------------------------------

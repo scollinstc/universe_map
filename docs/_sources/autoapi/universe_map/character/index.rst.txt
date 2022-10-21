@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`universe_map.character`
 ================================
 
@@ -13,7 +15,6 @@ Classes
 .. autoapisummary::
 
    universe_map.character.CharacterName
-   universe_map.character.Character
 
 
 
@@ -23,22 +24,8 @@ Functions
 .. autoapisummary::
 
    universe_map.character.create_name_list
-   universe_map.character.get_default_name_type_list
 
 
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   universe_map.character.logger
-
-
-.. py:data:: logger
-   
-
-   
 
 .. py:class:: CharacterName(general_name_type, names, name_types)
 
@@ -74,15 +61,6 @@ Attributes
 
    ..
        !! processed by numpydoc !!
-   .. py:property:: name_type
-
-
-   .. py:property:: name
-
-
-   .. py:property:: full_name_string
-
-
 
 .. py:function:: create_name_list(names, name_types)
 
@@ -113,19 +91,4 @@ Attributes
 
    ..
        !! processed by numpydoc !!
-
-.. py:class:: Character
-
-   .. py:property:: names
-
-
-   .. py:method:: add_name(general_name_type, names, name_types)
-
-
-   .. py:method:: add_name_from_string(general_name_type, name_string)
-
-
-
-.. py:function:: get_default_name_type_list(name_list)
-
 
