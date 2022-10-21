@@ -161,6 +161,10 @@ Includes types like ‘Familiar’, ‘Alias’, ‘Formal’, ‘Legal’, etc.
 <span class="gp">&gt;&gt;&gt; </span><span class="n">character_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexander&#39;</span><span class="p">,</span> <span class="s1">&#39;Malcolm&#39;</span><span class="p">,</span> <span class="s1">&#39;Mackenzie&#39;</span><span class="p">,</span> <span class="s1">&#39;Fraser&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">character_name_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;Middle&#39;</span><span class="p">,</span> <span class="s1">&#39;Middle&#39;</span><span class="p">,</span> <span class="s1">&#39;Middle&#39;</span><span class="p">,</span> <span class="s1">&#39;Surname&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_character_name</span> <span class="o">=</span> <span class="n">CharacterName</span><span class="p">(</span><span class="n">name_type</span><span class="p">,</span> <span class="n">character_names</span><span class="p">,</span> <span class="n">character_name_types</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_character_name</span><span class="o">.</span><span class="n">name_type</span>
+<span class="go">&#39;Formal&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_character_name</span><span class="o">.</span><span class="n">name</span>
+<span class="go">[{&#39;name&#39;: &#39;James&#39;, &#39;type&#39;: &#39;First&#39;}, {&#39;name&#39;: &#39;Alexander&#39;, &#39;type&#39;: &#39;Middle&#39;}, {&#39;name&#39;: &#39;Malcolm&#39;, &#39;type&#39;: &#39;Middle&#39;}, {&#39;name&#39;: &#39;Mackenzie&#39;, &#39;type&#39;: &#39;Middle&#39;}, {&#39;name&#39;: &#39;Fraser&#39;, &#39;type&#39;: &#39;Surname&#39;}]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -201,6 +205,11 @@ having to specify them.</p>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;James Alexander Malcolm Mackenzie Fraser&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name_list</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

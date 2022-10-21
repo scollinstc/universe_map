@@ -119,6 +119,8 @@ class CharacterName:
         >>> my_character_name = CharacterName(name_type, character_names, character_name_types)
         >>> my_character_name.name_type
         'Formal'
+        >>> my_character_name.name
+        [{'name': 'James', 'type': 'First'}, {'name': 'Alexander', 'type': 'Middle'}, {'name': 'Malcolm', 'type': 'Middle'}, {'name': 'Mackenzie', 'type': 'Middle'}, {'name': 'Fraser', 'type': 'Surname'}]
         """
         assert len(names) == len(name_types), logger.info("Names and types lists need to be the same length.")
         self._name_type = general_name_type
