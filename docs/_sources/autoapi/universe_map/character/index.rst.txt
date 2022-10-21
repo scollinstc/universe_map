@@ -1,5 +1,3 @@
-:orphan:
-
 :py:mod:`universe_map.character`
 ================================
 
@@ -14,6 +12,7 @@ Classes
 
 .. autoapisummary::
 
+   universe_map.character.Character
    universe_map.character.CharacterName
 
 
@@ -24,26 +23,23 @@ Functions
 .. autoapisummary::
 
    universe_map.character.create_name_list
+   universe_map.character.get_default_name_type_list
 
 
 
-.. py:class:: CharacterName(general_name_type, names, name_types)
+.. py:class:: Character
 
    
-   Character name object associated with a Character.
+   Character object to depict person or character in a story universe.
 
-   .. attribute:: name_type
+   This object depicts a character and includes their names or names. Names for characters can be simple or complex,
+   so the name is another object within this submodule.
 
-      Specifies what type of name is associated with this name for a character.
-      Includes types like 'Familiar', 'Alias', 'Formal', 'Legal', etc.
+   .. attribute:: names
 
-      :type: String
+      List of CharacterName objects associated with this Character.
 
-   name : String
-       Name value for the character
-
-   full_name_string : String
-       Joins name values together into one string.
+      :type: list
 
 
 
@@ -62,6 +58,109 @@ Functions
    ..
        !! processed by numpydoc !!
 
+   .. py:method:: add_name(general_name_type, names, name_types)
+
+      
+      Add a name to the Character's names list attribute.
+
+      :param general_name_type: General type of the name. Includes types like 'Familiar', 'Alias', 'Formal', 'Legal', etc.
+      :type general_name_type: String
+      :param names: Full name to be added, presented as a comma-separated string. i.e., ['James', 'Fraser']
+      :type names: list
+      :param name_types: Type of each name to be added to the list. This should correspond to the list item of the same index in
+                         the 'names' parameter.
+      :type name_types: list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_name_from_string(general_name_type, name_string)
+
+      
+      Given a general name type and a string of a name separated by spaces, the name is parsed, the individual
+      name parts are identified and associated, and they are added to this character's name list.
+
+      :param general_name_type: Specifies the type of name that the name_string parameter is. Includes types like 'Familiar',
+                                'Alias', 'Formal', 'Legal', etc.
+      :type general_name_type: String
+      :param name_string: Characters name as a string with parts of the name separated by spaces. For example, 'James Alexander
+                          Malcolm Mackenzie Fraser'.
+      :type name_string: String
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: CharacterName(general_name_type, names, name_types)
+
+   
+   Character name object associated with a Character.
+
+   .. attribute:: name_type
+
+      Specifies what type of name is associated with this name for a character.
+      Includes types like 'Familiar', 'Alias', 'Formal', 'Legal', etc.
+
+      :type: String
+
+   .. attribute:: name
+
+      Name value for the character
+
+      :type: String
+
+   .. attribute:: full_name_string
+
+      Joins name values together into one string.
+
+      :type: String
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
 .. py:function:: create_name_list(names, name_types)
 
    
@@ -73,6 +172,35 @@ Functions
    :type name_types: list
 
    :returns: A list of dictionaries including the names and their types
+   :rtype: list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: get_default_name_type_list(name_list)
+
+   
+   Gets the default name type types from a name list. Filler method if you just want general name types rather than
+   having to specify them.
+
+   :param name_list: List of names, separated by a comma. Example: ['Claire', 'Elizabeth', 'Beauchamp']
+   :type name_list: list
+
+   :returns: **name_types** -- List of name types associated with the name_list names.
    :rtype: list
 
 

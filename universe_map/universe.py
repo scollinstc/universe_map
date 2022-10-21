@@ -20,6 +20,16 @@ class Universe:
 
     """
     def __init__(self, name=None, characters=None):
+        """
+        An object used to represent a story's world, or 'universe'.
+
+        Parameters
+        ----------
+        name : str
+            A string that gives the name of the universe instance.
+        characters : list
+            A list of universe_map.Character objects comprising the characters present in this universe.
+        """
 
         self._name = None
         self._characters = []

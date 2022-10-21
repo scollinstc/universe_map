@@ -45,7 +45,10 @@
 <h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h3>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#universe_map.character.CharacterName" title="universe_map.character.CharacterName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CharacterName</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#universe_map.character.Character" title="universe_map.character.Character"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Character</span></code></a></p></td>
+<td><p>Character object to depict person or character in a story universe.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#universe_map.character.CharacterName" title="universe_map.character.CharacterName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CharacterName</span></code></a></p></td>
 <td><p>Character name object associated with a Character.</p></td>
 </tr>
 </tbody>
@@ -58,8 +61,63 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#universe_map.character.create_name_list" title="universe_map.character.create_name_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_name_list</span></code></a>(names, name_types)</p></td>
 <td><p>Creates a list of names in dictionary format to use with Character objects.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#universe_map.character.get_default_name_type_list" title="universe_map.character.get_default_name_type_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_default_name_type_list</span></code></a>(name_list)</p></td>
+<td><p>Gets the default name type types from a name list. Filler method if you just want general name types rather than</p></td>
+</tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="universe_map.character.Character">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">Character</span></span><a class="headerlink" href="#universe_map.character.Character" title="Permalink to this definition">¶</a></dt>
+<dd><p>Character object to depict person or character in a story universe.</p>
+<p>This object depicts a character and includes their names or names. Names for characters can be simple or complex,
+so the name is another object within this submodule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="universe_map.character.Character.names">
+<span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#universe_map.character.Character.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of CharacterName objects associated with this Character.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="universe_map.character.Character.add_name">
+<span class="sig-name descname"><span class="pre">add_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">general_name_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.Character.add_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a name to the Character’s names list attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>general_name_type</strong> (<em>String</em>) – General type of the name. Includes types like ‘Familiar’, ‘Alias’, ‘Formal’, ‘Legal’, etc.</p></li>
+<li><p><strong>names</strong> (<em>list</em>) – Full name to be added, presented as a comma-separated string. i.e., [‘James’, ‘Fraser’]</p></li>
+<li><p><strong>name_types</strong> (<em>list</em>) – Type of each name to be added to the list. This should correspond to the list item of the same index in
+the ‘names’ parameter.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="universe_map.character.Character.add_name_from_string">
+<span class="sig-name descname"><span class="pre">add_name_from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">general_name_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.Character.add_name_from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a general name type and a string of a name separated by spaces, the name is parsed, the individual
+name parts are identified and associated, and they are added to this character’s name list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>general_name_type</strong> (<em>String</em>) – Specifies the type of name that the name_string parameter is. Includes types like ‘Familiar’,
+‘Alias’, ‘Formal’, ‘Legal’, etc.</p></li>
+<li><p><strong>name_string</strong> (<em>String</em>) – Characters name as a string with parts of the name separated by spaces. For example, ‘James Alexander
+Malcolm Mackenzie Fraser’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="universe_map.character.CharacterName">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">CharacterName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">general_name_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.CharacterName" title="Permalink to this definition">¶</a></dt>
@@ -76,12 +134,28 @@ Includes types like ‘Familiar’, ‘Alias’, ‘Formal’, ‘Legal’, etc.
 </dl>
 </dd></dl>
 
-<dl class="simple">
-<dt>name<span class="classifier">String</span></dt><dd><p>Name value for the character</p>
-</dd>
-<dt>full_name_string<span class="classifier">String</span></dt><dd><p>Joins name values together into one string.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="universe_map.character.CharacterName.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#universe_map.character.CharacterName.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name value for the character</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="universe_map.character.CharacterName.full_name_string">
+<span class="sig-name descname"><span class="pre">full_name_string</span></span><a class="headerlink" href="#universe_map.character.CharacterName.full_name_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Joins name values together into one string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py function">
@@ -97,6 +171,24 @@ Includes types like ‘Familiar’, ‘Alias’, ‘Formal’, ‘Legal’, etc.
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of dictionaries including the names and their types</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="universe_map.character.get_default_name_type_list">
+<span class="sig-prename descclassname"><span class="pre">universe_map.character.</span></span><span class="sig-name descname"><span class="pre">get_default_name_type_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.get_default_name_type_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the default name type types from a name list. Filler method if you just want general name types rather than
+having to specify them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name_list</strong> (<em>list</em>) – List of names, separated by a comma. Example: [‘Claire’, ‘Elizabeth’, ‘Beauchamp’]</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>name_types</strong> – List of name types associated with the name_list names.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
@@ -122,11 +214,20 @@ Includes types like ‘Familiar’, ‘Alias’, ‘Formal’, ‘Legal’, etc.
 <li><a class="reference internal" href="#module-contents">Module Contents</a><ul>
 <li><a class="reference internal" href="#classes">Classes</a></li>
 <li><a class="reference internal" href="#functions">Functions</a><ul>
+<li><a class="reference internal" href="#universe_map.character.Character">Character</a><ul>
+<li><a class="reference internal" href="#universe_map.character.Character.names">names</a></li>
+<li><a class="reference internal" href="#universe_map.character.Character.add_name">add_name</a></li>
+<li><a class="reference internal" href="#universe_map.character.Character.add_name_from_string">add_name_from_string</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#universe_map.character.CharacterName">CharacterName</a><ul>
 <li><a class="reference internal" href="#universe_map.character.CharacterName.name_type">name_type</a></li>
+<li><a class="reference internal" href="#universe_map.character.CharacterName.name">name</a></li>
+<li><a class="reference internal" href="#universe_map.character.CharacterName.full_name_string">full_name_string</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#universe_map.character.create_name_list">create_name_list</a></li>
+<li><a class="reference internal" href="#universe_map.character.get_default_name_type_list">get_default_name_type_list</a></li>
 </ul>
 </li>
 </ul>

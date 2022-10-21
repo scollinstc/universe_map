@@ -1,5 +1,3 @@
-:orphan:
-
 :py:mod:`universe_map`
 ======================
 
@@ -12,6 +10,7 @@ Submodules
    :titlesonly:
    :maxdepth: 1
 
+   character/index.rst
    universe/index.rst
 
 

@@ -3,6 +3,81 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+class Character:
+    """
+    Character object to depict person or character in a story universe.
+
+    This object depicts a character and includes their names or names. Names for characters can be simple or complex,
+    so the name is another object within this submodule.
+
+    Attributes
+    ----------
+    names : list
+        List of CharacterName objects associated with this Character.
+
+    """
+
+    def __init__(self):
+        """
+        Character object to depict person or character in a story universe.
+
+        This object depicts a character and includes their names or names. Names for characters can be simple or complex,
+        so the name is another object within this submodule.
+
+        Attributes
+        ----------
+        names : list
+            List of CharacterName objects associated with this Character.
+        """
+        self._names = []
+
+    @property
+    def names(self):
+        return self._names
+
+    @names.setter
+    def names(self, value):
+        self._names = value
+
+    def add_name(self, general_name_type, names, name_types):
+        """
+        Add a name to the Character's names list attribute.
+
+        Parameters
+        ----------
+        general_name_type : String
+            General type of the name. Includes types like 'Familiar', 'Alias', 'Formal', 'Legal', etc.
+
+        names : list
+            Full name to be added, presented as a comma-separated string. i.e., ['James', 'Fraser']
+
+        name_types : list
+            Type of each name to be added to the list. This should correspond to the list item of the same index in
+            the 'names' parameter.
+        """
+        self._names.append(CharacterName(general_name_type, names, name_types))
+
+    def add_name_from_string(self, general_name_type, name_string):
+        """
+        Given a general name type and a string of a name separated by spaces, the name is parsed, the individual
+        name parts are identified and associated, and they are added to this character's name list.
+
+        Parameters
+        ----------
+        general_name_type : String
+            Specifies the type of name that the name_string parameter is. Includes types like 'Familiar',
+            'Alias', 'Formal', 'Legal', etc.
+
+        name_string : String
+            Characters name as a string with parts of the name separated by spaces. For example, 'James Alexander
+            Malcolm Mackenzie Fraser'.
+        """
+        name_list = name_string.split(' ')
+        assert len(name_list) > 0, 'Invalid name.'
+        name_types = get_default_name_type_list(name_list)
+        self._names.append(CharacterName(general_name_type, name_list, name_types))
+
+
 class CharacterName:
     """
     Character name object associated with a Character.
@@ -18,10 +93,25 @@ class CharacterName:
 
     full_name_string : String
         Joins name values together into one string.
+
     """
     def __init__(self, general_name_type, names, name_types):
-        # First, assert that names and types are the same length
-        assert len(names) == len(name_types), _logger.info("Names and types lists need to be the same length.")
+        """
+        Character name object associated with a Character.
+
+        Attributes
+        ----------
+        name_type : String
+            Specifies what type of name is associated with this name for a character.
+            Includes types like 'Familiar', 'Alias', 'Formal', 'Legal', etc.
+
+        name : String
+            Name value for the character
+
+        full_name_string : String
+            Joins name values together into one string.
+        """
+        assert len(names) == len(name_types), logger.info("Names and types lists need to be the same length.")
         self._name_type = general_name_type
         self._name = create_name_list(names, name_types)
         logger.info(str.format(' New %s name added: %s' % (self.name_type, self.full_name_string)))
@@ -46,7 +136,6 @@ class CharacterName:
     def full_name_string(self):
         return " ".join([self._name[x]['name'] for x in range(len(self._name))])
 
-
 def create_name_list(names, name_types):
     """
     Creates a list of names in dictionary format to use with Character objects.
@@ -58,7 +147,7 @@ def create_name_list(names, name_types):
     name_types : list
         List of name types, with indices corresponding to the names given in the names parameter.
 
-    returns
+    Returns
     -------
     list
         A list of dictionaries including the names and their types
@@ -70,31 +159,21 @@ def create_name_list(names, name_types):
         name_list.append(char_dict)
     return name_list
 
-
-class Character:
-    def __init__(self):
-        self._names = []
-
-    @property
-    def names(self):
-        return self._names
-
-    @names.setter
-    def names(self, value):
-        self._names = value
-
-    def add_name(self, general_name_type, names, name_types):
-        self._names.append(CharacterName(general_name_type, names, name_types))
-
-    def add_name_from_string(self, general_name_type, name_string):
-        # Need to convert to type, name list, name_type list to create character name.
-        name_list = name_string.split(' ')
-        assert len(name_list) > 0, 'Invalid name.'
-        name_types = get_default_name_type_list(name_list)
-        self._names.append(CharacterName(general_name_type, name_list, name_types))
-
-
 def get_default_name_type_list(name_list):
+    """
+    Gets the default name type types from a name list. Filler method if you just want general name types rather than
+    having to specify them.
+
+    Parameters
+    ----------
+    name_list : list
+        List of names, separated by a comma. Example: ['Claire', 'Elizabeth', 'Beauchamp']
+
+    Returns
+    -------
+    name_types : list
+        List of name types associated with the name_list names.
+    """
     if len(name_list) == 1:
         return ['Mononym']
     name_types = [None for _ in name_list]

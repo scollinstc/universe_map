@@ -27,8 +27,8 @@ autosummary_generate = True
 autosummary_imported_members = True
 numpydoc_show_class_members = True
 autoapi_dirs = ['../../universe_map']
-autoapi_options = ['members', 'inherited-members', 'private-members', 'show-inheritance', 'show-inheritance-diagram',
-                   'show-module-summary']
+autoapi_python_class_content = 'init'
+autoapi_add_toctree_entry = True
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -36,3 +36,13 @@ autoapi_options = ['members', 'inherited-members', 'private-members', 'show-inhe
 
 html_theme = 'nature'
 html_static_path = ['_static']
+
+def skip_properties(app, what, name, obj, skip, options):
+    if what == "property":
+        skip = True
+    elif "logger" in name:
+        skip = True
+    return skip
+
+def setup(sphinx):
+   sphinx.connect("autoapi-skip-member", skip_properties)
