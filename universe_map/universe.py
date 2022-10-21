@@ -32,9 +32,6 @@ class Universe:
 
     @property
     def name(self):
-        """
-        :noindex:
-        """
         return self._name
 
     @name.setter
