@@ -6,6 +6,9 @@
 Welcome to Universe Map's documentation!
 ========================================
 
+This package lets you lay out the universe of a story while you are watching a tv series or reading a book series,
+so you can keep track of people, places, and events.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

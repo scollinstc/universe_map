@@ -41,6 +41,14 @@ Functions
 
       :type: list
 
+   .. rubric:: Examples
+
+   >>> character_one = Character()
+   >>> name = "John Doe"
+   >>> character_one.add_name_from_string('Formal', name)
+   >>> character_one.names[0].full_name_string
+   'John Doe'
+
 
 
 
@@ -71,6 +79,15 @@ Functions
                          the 'names' parameter.
       :type name_types: list
 
+      .. rubric:: Examples
+
+      >>> character_one = Character()
+      >>> name_list = ['John', 'Doe']
+      >>> name_type_list = ['First', 'Last']
+      >>> character_one.add_name('Formal', name_list, name_type_list)
+      >>> character_one.names[0].full_name_string
+      'John Doe'
+
 
 
 
@@ -97,9 +114,16 @@ Functions
       :param general_name_type: Specifies the type of name that the name_string parameter is. Includes types like 'Familiar',
                                 'Alias', 'Formal', 'Legal', etc.
       :type general_name_type: String
-      :param name_string: Characters name as a string with parts of the name separated by spaces. For example, 'James Alexander
-                          Malcolm Mackenzie Fraser'.
+      :param name_string: Characters name as a string with parts of the name separated by spaces. For example, 'John Doe'.
       :type name_string: String
+
+      .. rubric:: Examples
+
+      >>> character_one = Character()
+      >>> name = "John Doe"
+      >>> character_one.add_name_from_string('Formal', name)
+      >>> character_one.names[0].full_name_string
+      'John Doe'
 
 
 
@@ -185,6 +209,8 @@ Functions
    :returns: A list of dictionaries including the names and their types
    :rtype: list
 
+   .. rubric:: Examples
+
 
 
 
@@ -218,6 +244,10 @@ Functions
 
    >>> name = "James Alexander Malcolm Mackenzie Fraser"
    >>> name_list = name.split()
+   >>> name_list
+   ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+   >>> get_default_name_type_list(name_list)
+   ['First', 'Middle', 'Middle', 'Middle', 'Surname']
 
 
 

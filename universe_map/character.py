@@ -28,6 +28,14 @@ class Character:
         ----------
         names : list
             List of CharacterName objects associated with this Character.
+
+        Examples
+        --------
+        >>> character_one = Character()
+        >>> name = "John Doe"
+        >>> character_one.add_name_from_string('Formal', name)
+        >>> character_one.names[0].full_name_string
+        'John Doe'
         """
         self._names = []
 
@@ -54,6 +62,15 @@ class Character:
         name_types : list
             Type of each name to be added to the list. This should correspond to the list item of the same index in
             the 'names' parameter.
+
+        Examples
+        --------
+        >>> character_one = Character()
+        >>> name_list = ['John', 'Doe']
+        >>> name_type_list = ['First', 'Last']
+        >>> character_one.add_name('Formal', name_list, name_type_list)
+        >>> character_one.names[0].full_name_string
+        'John Doe'
         """
         self._names.append(CharacterName(general_name_type, names, name_types))
 
@@ -69,8 +86,15 @@ class Character:
             'Alias', 'Formal', 'Legal', etc.
 
         name_string : String
-            Characters name as a string with parts of the name separated by spaces. For example, 'James Alexander
-            Malcolm Mackenzie Fraser'.
+            Characters name as a string with parts of the name separated by spaces. For example, 'John Doe'.
+
+        Examples
+        --------
+        >>> character_one = Character()
+        >>> name = "John Doe"
+        >>> character_one.add_name_from_string('Formal', name)
+        >>> character_one.names[0].full_name_string
+        'John Doe'
         """
         name_list = name_string.split(' ')
         assert len(name_list) > 0, 'Invalid name.'
@@ -162,6 +186,10 @@ def create_name_list(names, name_types):
     -------
     list
         A list of dictionaries including the names and their types
+
+    Examples
+    --------
+
     """
     # List being used to preserve indexing order
     name_list = []
@@ -189,6 +217,10 @@ def get_default_name_type_list(name_list):
     --------
     >>> name = "James Alexander Malcolm Mackenzie Fraser"
     >>> name_list = name.split()
+    >>> name_list
+    ['James', 'Alexander', 'Malcolm', 'Mackenzie', 'Fraser']
+    >>> get_default_name_type_list(name_list)
+    ['First', 'Middle', 'Middle', 'Middle', 'Surname']
     """
     if len(name_list) == 1:
         return ['Mononym']

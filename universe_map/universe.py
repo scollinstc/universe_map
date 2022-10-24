@@ -29,11 +29,6 @@ class Universe:
             A string that gives the name of the universe instance.
         characters : list
             A list of universe_map.Character objects comprising the characters present in this universe.
-
-        Examples
-        --------
-        >>> story_world = Universe()
-        >>> another_story_world = Universe(name='Made Up World')
         """
 
         self._name = None

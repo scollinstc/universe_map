@@ -83,6 +83,14 @@ so the name is another object within this submodule.</p>
 </dl>
 </dd></dl>
 
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span> <span class="o">=</span> <span class="n">Character</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John Doe&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span><span class="o">.</span><span class="n">add_name_from_string</span><span class="p">(</span><span class="s1">&#39;Formal&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">full_name_string</span>
+<span class="go">&#39;John Doe&#39;</span>
+</pre></div>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="universe_map.character.Character.add_name">
 <span class="sig-name descname"><span class="pre">add_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">general_name_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_types</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#universe_map.character.Character.add_name" title="Permalink to this definition">¶</a></dt>
@@ -97,6 +105,15 @@ the ‘names’ parameter.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span> <span class="o">=</span> <span class="n">Character</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Doe&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name_type_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;Last&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span><span class="o">.</span><span class="n">add_name</span><span class="p">(</span><span class="s1">&#39;Formal&#39;</span><span class="p">,</span> <span class="n">name_list</span><span class="p">,</span> <span class="n">name_type_list</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">full_name_string</span>
+<span class="go">&#39;John Doe&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -109,11 +126,18 @@ name parts are identified and associated, and they are added to this character�
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>general_name_type</strong> (<em>String</em>) – Specifies the type of name that the name_string parameter is. Includes types like ‘Familiar’,
 ‘Alias’, ‘Formal’, ‘Legal’, etc.</p></li>
-<li><p><strong>name_string</strong> (<em>String</em>) – Characters name as a string with parts of the name separated by spaces. For example, ‘James Alexander
-Malcolm Mackenzie Fraser’.</p></li>
+<li><p><strong>name_string</strong> (<em>String</em>) – Characters name as a string with parts of the name separated by spaces. For example, ‘John Doe’.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span> <span class="o">=</span> <span class="n">Character</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John Doe&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span><span class="o">.</span><span class="n">add_name_from_string</span><span class="p">(</span><span class="s1">&#39;Formal&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">character_one</span><span class="o">.</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">full_name_string</span>
+<span class="go">&#39;John Doe&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -187,6 +211,7 @@ Includes types like ‘Familiar’, ‘Alias’, ‘Formal’, ‘Legal’, etc.
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
 </dd></dl>
 
 <dl class="py function">
@@ -208,6 +233,10 @@ having to specify them.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;James Alexander Malcolm Mackenzie Fraser&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">name_list</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name_list</span>
+<span class="go">[&#39;James&#39;, &#39;Alexander&#39;, &#39;Malcolm&#39;, &#39;Mackenzie&#39;, &#39;Fraser&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_default_name_type_list</span><span class="p">(</span><span class="n">name_list</span><span class="p">)</span>
+<span class="go">[&#39;First&#39;, &#39;Middle&#39;, &#39;Middle&#39;, &#39;Middle&#39;, &#39;Surname&#39;]</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -38,11 +38,6 @@ Classes
    :param characters: A list of universe_map.Character objects comprising the characters present in this universe.
    :type characters: list
 
-   .. rubric:: Examples
-
-   >>> story_world = Universe()
-   >>> another_story_world = Universe(name='Made Up World')
-
 
 
 
